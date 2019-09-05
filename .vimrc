@@ -8,7 +8,9 @@ call vundle#begin()
 Plugin 'git://github.com/scrooloose/nerdtree.git'
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'VundleVim/taglist.vim'
+" Plugin 'VundleVim/taglist.vim'
+Plugin 'posva/vim-vue'
+Plugin 'nathanaelkane/vim-indent-guides'
 Bundle 'majutsushi/tagbar'
 " 安装插件写在这之前
 call vundle#end()            " required
@@ -52,3 +54,13 @@ set shiftwidth=4
 map <F9> :TagbarToggle<CR>
 " 启动自动focus
 let g:tagbar_autofocus = 1
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
+let g:indent_guides_enable_on_vim_startup = 1 "添加行，vim启动时启用
+let g:indent_guides_start_level = 1           "添加行，开始显示对齐线的缩进级别
+let g:indent_guides_guide_size = 1            "添加行，对齐线的宽度，（1字符）
+let g:indent_guides_tab_guides = 0            "添加行，对tab对齐的禁用
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=blue ctermbg=blue
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=red ctermbg=red
